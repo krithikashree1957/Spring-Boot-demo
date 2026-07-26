@@ -21,6 +21,7 @@ public class Application {
 	@GetMapping
 	public String helloWorld()
 	{
-		return "Hello World Spring Boot!";
+		return "Hello World Spring Boot! Hi Krithika!";
+		
 	}
 }
