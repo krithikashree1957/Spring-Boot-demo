@@ -5,6 +5,8 @@ services:
     environment:
       POSTGRES_USER: krithika
       POSTGRES_PASSWORD: password
+      POSTGRES_DB: kikidb
+      TZ: Asia/Kolkata
       PGDATA: /data/postgres
     volumes:
       - db:/data/postgres
