@@ -1,62 +1,68 @@
 # Spring Boot Demo Application
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/krithikashree1957/Spring-Boot-demo) [![Open in Replit](https://replit.com/badge/github/krithikashree1957/Spring-Boot-demo)](https://replit.com/github/krithikashree1957/Spring-Boot-demo) <img src="https://github.com/codespaces/badge.svg" alt="Open in Codespaces" />
+A beginner-friendly Spring Boot demo project built to learn how to create a REST API, connect it to PostgreSQL, run it through Docker, and debug common Spring/JPA issues in a practical way.
 
-A beginner-friendly Spring Boot demo that shows how to build a small REST API backed by PostgreSQL, run it with Docker Compose, and debug common Spring/JPA issues.
+## Project Overview
 
-## Table of contents
+This project demonstrates a simple Spring Boot application that:
 
-- [Demo features](#demo-features)
-- [Tech stack](#tech-stack)
-- [Quick start](#quick-start)
-- [API examples](#api-examples)
-- [Screenshots](#screenshots)
-- [Notes](#notes)
-- [Author](#author)
+- starts a Spring Boot server
+- exposes REST endpoints for software engineers
+- maps a JPA entity to PostgreSQL
+- uses Docker Compose to run the database
+- supports manual HTTP testing with a `.http` file
 
-## Demo features
+## Demo Features
 
-- `GET /api/v1/software-engineers` — fetch all records  
-- `GET /api/v1/software-engineers/{id}` — fetch a record by ID  
-- `POST /api/v1/software-engineers` — insert a new software engineer  
-- JPA entity mapping with Hibernate  
-- PostgreSQL connection using Spring Data JPA  
-- Docker Compose setup for local development
+The application includes the following learning/demo features:
 
-## Tech stack
+- `GET /api/v1/software-engineers` to fetch all records
+- `GET /api/v1/software-engineers/{id}` to fetch one record by ID
+- `POST /api/v1/software-engineers` to insert a new software engineer
+- JPA entity mapping with Hibernate
+- PostgreSQL connection using Spring Data JPA
+- Docker-based database setup for local development
 
-- Java 17  
-- Spring Boot 4.1.0  
-- Spring Web MVC  
-- Spring Data JPA  
-- Hibernate ORM  
-- PostgreSQL  
-- Docker Compose  
+## Tech Stack
+
+- Java 17
+- Spring Boot 4.1.0
+- Spring Web MVC
+- Spring Data JPA
+- Hibernate ORM
+- PostgreSQL
+- Docker Compose
 - Maven
 
-## Quick start
+## Project Structure
 
-1. Start PostgreSQL with Docker Compose:
+- `src/main/java/com/spring_boot/Application.java` — main Spring Boot application entry point
+- `src/main/java/com/spring_boot/SoftwareEngineer.java` — JPA entity model
+- `src/main/java/com/spring_boot/SoftwareEngineerController.java` — REST controller
+- `src/main/java/com/spring_boot/SoftwareEngineerService.java` — service layer
+- `src/main/java/com/spring_boot/SoftwareEngineerRepository.java` — repository layer
+- `src/main/resources/application.properties` — datasource and JPA configuration
+- `docker-compose.yml` — Postgres container configuration
+- `src/main/java/com/spring_boot/request.http` — manual API request examples
 
-```bash
+## How to Run
+
+1. Start the PostgreSQL container:
+
+```powershell
 docker compose up -d
 ```
 
-2. Run the Spring Boot app (set timezone to UTC to avoid timezone alias issues):
+2. Run the Spring Boot application with a UTC timezone override to avoid the PostgreSQL timezone alias issue:
 
-```bash
-# macOS / Linux
-export JAVA_TOOL_OPTIONS="-Duser.timezone=UTC"
-./mvnw spring-boot:run
-
-# PowerShell (Windows)
+```powershell
 $env:JAVA_TOOL_OPTIONS="-Duser.timezone=UTC"
 .\mvnw spring-boot:run
 ```
 
-3. Open the endpoints in your browser or API client.
+3. Open the API endpoints in your browser or HTTP client.
 
-## API examples
+## API Examples
 
 ### Get all engineers
 
@@ -82,52 +88,33 @@ Content-Type: application/json
 }
 ```
 
+## Issues That Were Fixed During Learning
+
+This project went through several debugging corrections, including:
+
+- fixed the malformed `SoftwareEngineerService` class
+- corrected the controller route and HTTP method wiring
+- restored the proper JPA entity annotations and constructor structure
+- added the repository interface for Spring Data JPA
+- cleaned the request mapping issues for `GET` and `POST`
+- fixed the database connection setup for PostgreSQL
+- corrected the timezone mismatch problem by forcing the application to run with `UTC`
+
 ## Screenshots
 
-Click any thumbnail to view the full-size image. Source images are in the `src/` folder.
+Click any link to view the full-size image in the repository.
 
-<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
-  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
-    <a href="src/1.png"><img src="src/1.png" alt="Application - list of software engineers" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
-    <figcaption style="margin-top:6px;color:#444;">List view — all engineers</figcaption>
-  </figure>
-
-  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
-    <a href="src/2.png"><img src="src/2.png" alt="Application - engineer details" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
-    <figcaption style="margin-top:6px;color:#444;">Detail view — single engineer</figcaption>
-  </figure>
-
-  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
-    <a href="src/3.png"><img src="src/3.png" alt="API request example (POST)" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
-    <figcaption style="margin-top:6px;color:#444;">Example POST request</figcaption>
-  </figure>
-
-  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
-    <a href="src/4.png"><img src="src/4.png" alt="Database connection log / Docker setup" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
-    <figcaption style="margin-top:6px;color:#444;">Docker / Postgres setup</figcaption>
-  </figure>
-
-  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
-    <a href="src/5.png"><img src="src/5.png" alt="JPA entity mapping / schema" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
-    <figcaption style="margin-top:6px;color:#444;">JPA entity mapping</figcaption>
-  </figure>
-
-  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
-    <a href="src/6.png"><img src="src/6.png" alt="Request examples in HTTP file" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
-    <figcaption style="margin-top:6px;color:#444;">.http request examples</figcaption>
-  </figure>
-
-  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
-    <a href="src/7.png"><img src="src/7.png" alt="Debugging / console output" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
-    <figcaption style="margin-top:6px;color:#444;">Debug / console output</figcaption>
-  </figure>
-</div>
-
-> Accessibility: each image has descriptive alt text and a short caption.
+- [Screenshot 1 — List view — all engineers](src/1.png)
+- [Screenshot 2 — Detail view — single engineer](src/2.png)
+- [Screenshot 3 — Example POST request](src/3.png)
+- [Screenshot 4 — Docker / Postgres setup](src/4.png)
+- [Screenshot 5 — JPA entity mapping](src/5.png)
+- [Screenshot 6 — .http request examples](src/6.png)
+- [Screenshot 7 — Debug / console output](src/7.png)
 
 ## Notes
 
-This repository is a learning/demo version created to understand Spring Boot structure, JPA mappings, REST controllers, and connecting to PostgreSQL.
+This repository was created as a learning/demo version to understand how Spring Boot applications are structured, how REST endpoints are exposed, how JPA entities are mapped, and how a PostgreSQL database is used in a real application workflow.
 
 ## Author
 
