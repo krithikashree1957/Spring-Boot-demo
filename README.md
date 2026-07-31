@@ -86,23 +86,44 @@ Content-Type: application/json
 
 Click any thumbnail to view the full-size image. Source images are in the `src/` folder.
 
-<p align="center">
-  <a href="src/1.png"><img src="src/1.png" alt="Screenshot 1" width="280" /></a>
-  <a href="src/2.png"><img src="src/2.png" alt="Screenshot 2" width="280" /></a>
-  <a href="src/3.png"><img src="src/3.png" alt="Screenshot 3" width="280" /></a>
-</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
+    <a href="src/1.png"><img src="src/1.png" alt="Application - list of software engineers" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
+    <figcaption style="margin-top:6px;color:#444;">List view — all engineers</figcaption>
+  </figure>
 
-<p align="center">
-  <a href="src/4.png"><img src="src/4.png" alt="Screenshot 4" width="280" /></a>
-  <a href="src/5.png"><img src="src/5.png" alt="Screenshot 5" width="280" /></a>
-  <a href="src/6.png"><img src="src/6.png" alt="Screenshot 6" width="280" /></a>
-</p>
+  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
+    <a href="src/2.png"><img src="src/2.png" alt="Application - engineer details" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
+    <figcaption style="margin-top:6px;color:#444;">Detail view — single engineer</figcaption>
+  </figure>
 
-<p align="center">
-  <a href="src/7.png"><img src="src/7.png" alt="Screenshot 7" width="280" /></a>
-</p>
+  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
+    <a href="src/3.png"><img src="src/3.png" alt="API request example (POST)" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
+    <figcaption style="margin-top:6px;color:#444;">Example POST request</figcaption>
+  </figure>
 
-> Tip: On GitHub the thumbnails render inline; clicking opens the raw image.
+  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
+    <a href="src/4.png"><img src="src/4.png" alt="Database connection log / Docker setup" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
+    <figcaption style="margin-top:6px;color:#444;">Docker / Postgres setup</figcaption>
+  </figure>
+
+  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
+    <a href="src/5.png"><img src="src/5.png" alt="JPA entity mapping / schema" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
+    <figcaption style="margin-top:6px;color:#444;">JPA entity mapping</figcaption>
+  </figure>
+
+  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
+    <a href="src/6.png"><img src="src/6.png" alt="Request examples in HTTP file" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
+    <figcaption style="margin-top:6px;color:#444;">.http request examples</figcaption>
+  </figure>
+
+  <figure style="width:160px;margin:0;text-align:center;font-size:13px;">
+    <a href="src/7.png"><img src="src/7.png" alt="Debugging / console output" width="160" style="border:1px solid #ddd;border-radius:4px;"/></a>
+    <figcaption style="margin-top:6px;color:#444;">Debug / console output</figcaption>
+  </figure>
+</div>
+
+> Accessibility: each image has descriptive alt text and a short caption.
 
 ## Notes
 
