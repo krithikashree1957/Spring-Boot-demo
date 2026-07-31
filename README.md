@@ -1,98 +1,62 @@
 # Spring Boot Demo Application
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/krithikashree1957/Spring-Boot-demo) [![Open in Replit](https://replit.com/badge/github/krithikashree1957/Spring-Boot-demo)](https://replit.com/github/krithikashree1957/Spring-Boot-demo) <a href="https://github.com/codespaces/new?repo=krithikashree1957/Spring-Boot-demo"><img src="https://github.com/codespaces/badge.svg" alt="Open in Codespaces" /></a>
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/krithikashree1957/Spring-Boot-demo) [![Open in Replit](https://replit.com/badge/github/krithikashree1957/Spring-Boot-demo)](https://replit.com/github/krithikashree1957/Spring-Boot-demo) <img src="https://github.com/codespaces/badge.svg" alt="Open in Codespaces" />
 
-A beginner-friendly Spring Boot demo project built to learn how to create a REST API, connect it to PostgreSQL, run it through Docker, and debug common Spring/JPA issues in a practical way.
+A beginner-friendly Spring Boot demo that shows how to build a small REST API backed by PostgreSQL, run it with Docker Compose, and debug common Spring/JPA issues.
 
-## Interactive options
+## Table of contents
 
-These let you open the repository in an online environment so you can run and experiment with the app without installing everything locally.
+- [Demo features](#demo-features)
+- [Tech stack](#tech-stack)
+- [Quick start](#quick-start)
+- [API examples](#api-examples)
+- [Screenshots](#screenshots)
+- [Notes](#notes)
+- [Author](#author)
 
-- Open in Gitpod — launches a full cloud workspace with a terminal: https://gitpod.io/#https://github.com/krithikashree1957/Spring-Boot-demo
-- Open in Replit — imports the repo into Replit so you can run commands in the browser: https://replit.com/github/krithikashree1957/Spring-Boot-demo
-- Open in GitHub Codespaces — opens the repo in a Codespace (requires a GitHub plan that includes Codespaces): https://github.com/codespaces/new?repo=krithikashree1957/Spring-Boot-demo
+## Demo features
 
-<details>
-<summary>Quick interactive start (commands to run once your workspace opens)</summary>
+- `GET /api/v1/software-engineers` — fetch all records  
+- `GET /api/v1/software-engineers/{id}` — fetch a record by ID  
+- `POST /api/v1/software-engineers` — insert a new software engineer  
+- JPA entity mapping with Hibernate  
+- PostgreSQL connection using Spring Data JPA  
+- Docker Compose setup for local development
 
-1. Start the database container in the workspace terminal:
+## Tech stack
 
-```bash
-docker compose up -d
-```
-
-2. Run the Spring Boot app (use the wrapper if available):
-
-```bash
-export JAVA_TOOL_OPTIONS="-Duser.timezone=UTC"
-./mvnw spring-boot:run
-```
-
-3. Visit http://localhost:8080/api/v1/software-engineers from the workspace preview or forward the port using the environment's port forwarding UI.
-
-</details>
-
-## Project Overview
-
-This project demonstrates a simple Spring Boot application that:
-
-- starts a Spring Boot server
-- exposes REST endpoints for software engineers
-- maps a JPA entity to PostgreSQL
-- uses Docker Compose to run the database
-- supports manual HTTP testing with a `.http` file
-
-## Demo Features
-
-The application includes the following learning/demo features:
-
-- `GET /api/v1/software-engineers` to fetch all records
-- `GET /api/v1/software-engineers/{id}` to fetch one record by ID
-- `POST /api/v1/software-engineers` to insert a new software engineer
-- JPA entity mapping with Hibernate
-- PostgreSQL connection using Spring Data JPA
-- Docker-based database setup for local development
-
-## Tech Stack
-
-- Java 17
-- Spring Boot 4.1.0
-- Spring Web MVC
-- Spring Data JPA
-- Hibernate ORM
-- PostgreSQL
-- Docker Compose
+- Java 17  
+- Spring Boot 4.1.0  
+- Spring Web MVC  
+- Spring Data JPA  
+- Hibernate ORM  
+- PostgreSQL  
+- Docker Compose  
 - Maven
 
-## Project Structure
+## Quick start
 
-- `src/main/java/com/spring_boot/Application.java` — main Spring Boot application entry point
-- `src/main/java/com/spring_boot/SoftwareEngineer.java` — JPA entity model
-- `src/main/java/com/spring_boot/SoftwareEngineerController.java` — REST controller
-- `src/main/java/com/spring_boot/SoftwareEngineerService.java` — service layer
-- `src/main/java/com/spring_boot/SoftwareEngineerRepository.java` — repository layer
-- `src/main/resources/application.properties` — datasource and JPA configuration
-- `docker-compose.yml` — Postgres container configuration
-- `src/main/java/com/spring_boot/request.http` — manual API request examples
+1. Start PostgreSQL with Docker Compose:
 
-## How to Run
-
-1. Start the PostgreSQL container:
-
-```powershell
+```bash
 docker compose up -d
 ```
 
-2. Run the Spring Boot application with a UTC timezone override to avoid the PostgreSQL timezone alias issue:
+2. Run the Spring Boot app (set timezone to UTC to avoid timezone alias issues):
 
-```powershell
+```bash
+# macOS / Linux
+export JAVA_TOOL_OPTIONS="-Duser.timezone=UTC"
+./mvnw spring-boot:run
+
+# PowerShell (Windows)
 $env:JAVA_TOOL_OPTIONS="-Duser.timezone=UTC"
 .\mvnw spring-boot:run
 ```
 
-3. Open the API endpoints in your browser or HTTP client.
+3. Open the endpoints in your browser or API client.
 
-## API Examples
+## API examples
 
 ### Get all engineers
 
@@ -118,62 +82,31 @@ Content-Type: application/json
 }
 ```
 
-## Issues That Were Fixed During Learning
-
-This project went through several debugging corrections, including:
-
-- fixed the malformed `SoftwareEngineerService` class
-- corrected the controller route and HTTP method wiring
-- restored the proper JPA entity annotations and constructor structure
-- added the repository interface for Spring Data JPA
-- cleaned the request mapping issues for `GET` and `POST`
-- fixed the database connection setup for PostgreSQL
-- corrected the timezone mismatch problem by forcing the application to run with `UTC`
-
 ## Screenshots
 
-Below are screenshots of the demo application and example requests. The image files are included in the repository under `src/`.
+Click any thumbnail to view the full-size image. Source images are in the `src/` folder.
 
-<picture>
-  <source srcset="src/1.png" type="image/png">
-  <img alt="Screenshot 1" src="src/1.png">
-</picture>
+<p align="center">
+  <a href="src/1.png"><img src="src/1.png" alt="Screenshot 1" width="280" /></a>
+  <a href="src/2.png"><img src="src/2.png" alt="Screenshot 2" width="280" /></a>
+  <a href="src/3.png"><img src="src/3.png" alt="Screenshot 3" width="280" /></a>
+</p>
 
-<picture>
-  <source srcset="src/2.png" type="image/png">
-  <img alt="Screenshot 2" src="src/2.png">
-</picture>
+<p align="center">
+  <a href="src/4.png"><img src="src/4.png" alt="Screenshot 4" width="280" /></a>
+  <a href="src/5.png"><img src="src/5.png" alt="Screenshot 5" width="280" /></a>
+  <a href="src/6.png"><img src="src/6.png" alt="Screenshot 6" width="280" /></a>
+</p>
 
-<picture>
-  <source srcset="src/3.png" type="image/png">
-  <img alt="Screenshot 3" src="src/3.png">
-</picture>
+<p align="center">
+  <a href="src/7.png"><img src="src/7.png" alt="Screenshot 7" width="280" /></a>
+</p>
 
-<picture>
-  <source srcset="src/4.png" type="image/png">
-  <img alt="Screenshot 4" src="src/4.png">
-</picture>
-
-<picture>
-  <source srcset="src/5.png" type="image/png">
-  <img alt="Screenshot 5" src="src/5.png">
-</picture>
-
-<picture>
-  <source srcset="src/6.png" type="image/png">
-  <img alt="Screenshot 6" src="src/6.png">
-</picture>
-
-<picture>
-  <source srcset="src/7.png" type="image/png">
-  <img alt="Screenshot 7" src="src/7.png">
-</picture>
-
-> Tip: On GitHub the images will automatically render. If you want thumbnails side-by-side, I can make a small HTML table or use Markdown inline images.
+> Tip: On GitHub the thumbnails render inline; clicking opens the raw image.
 
 ## Notes
 
-This repository was created as a learning/demo version to understand how Spring Boot applications are structured, how REST endpoints are exposed, how JPA entities are mapped, and how a PostgreSQL data store fits into a Spring Data JPA project.
+This repository is a learning/demo version created to understand Spring Boot structure, JPA mappings, REST controllers, and connecting to PostgreSQL.
 
 ## Author
 
