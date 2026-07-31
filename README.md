@@ -100,9 +100,50 @@ This project went through several debugging corrections, including:
 - fixed the database connection setup for PostgreSQL
 - corrected the timezone mismatch problem by forcing the application to run with `UTC`
 
+## Screenshots
+
+Below are screenshots of the demo application and example requests. The image files are included in the repository under `src/`.
+
+<picture>
+  <source srcset="src/1.png" type="image/png">
+  <img alt="Screenshot 1" src="src/1.png">
+</picture>
+
+<picture>
+  <source srcset="src/2.png" type="image/png">
+  <img alt="Screenshot 2" src="src/2.png">
+</picture>
+
+<picture>
+  <source srcset="src/3.png" type="image/png">
+  <img alt="Screenshot 3" src="src/3.png">
+</picture>
+
+<picture>
+  <source srcset="src/4.png" type="image/png">
+  <img alt="Screenshot 4" src="src/4.png">
+</picture>
+
+<picture>
+  <source srcset="src/5.png" type="image/png">
+  <img alt="Screenshot 5" src="src/5.png">
+</picture>
+
+<picture>
+  <source srcset="src/6.png" type="image/png">
+  <img alt="Screenshot 6" src="src/6.png">
+</picture>
+
+<picture>
+  <source srcset="src/7.png" type="image/png">
+  <img alt="Screenshot 7" src="src/7.png">
+</picture>
+
+> Tip: On GitHub the images will automatically render. If you want thumbnails side-by-side, I can make a small HTML table or use Markdown inline images.
+
 ## Notes
 
-This repository was created as a learning/demo version to understand how Spring Boot applications are structured, how REST endpoints are exposed, how JPA entities are mapped, and how a PostgreSQL database is used in a real application workflow.
+This repository was created as a learning/demo version to understand how Spring Boot applications are structured, how REST endpoints are exposed, how JPA entities are mapped, and how a PostgreSQL data store fits into a Spring Data JPA project.
 
 ## Author
 
