@@ -1,28 +1,36 @@
 package com.spring_boot;
 
-import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/v1/software-engineers")
+@RequestMapping("/api/v1/software-engineers")
 public class SoftwareEngineerController {
-    
-    public String getMethodName(@RequestParam String param) {
-        return new String();
-    }
-    @GetMapping
-    public List<SoftwareEngineer> getEngineers() {
-        return List.of(
-                new SoftwareEngineer(1, "John Doe", "Java, Spring Boot, React"),
-                new SoftwareEngineer(2, "Jane Smith", "Python, Django, Angular"),
-                new SoftwareEngineer(3, "Alice Johnson", "JavaScript, Node.js, Vue.js")
-        );
+
+    private final SoftwareEngineerService softwareEngineerService;
+
+    public SoftwareEngineerController(SoftwareEngineerService softwareEngineerService) {
+        this.softwareEngineerService = softwareEngineerService;
     }
 
+    @GetMapping
+    public List<SoftwareEngineer> getEngineers() {
+        return softwareEngineerService.getAllSoftwareEngineers();
+    }
+
+    @GetMapping("/{id}")
+    public SoftwareEngineer getEngineerById(@PathVariable Integer id) {
+        return softwareEngineerService.getSoftwareEngineerById(id);
+    }
+
+    @PostMapping
+    public SoftwareEngineer createEngineer(@RequestBody SoftwareEngineer softwareEngineer) {
+        return softwareEngineerService.insertSoftwareEngineer(softwareEngineer);
+    }
 }
