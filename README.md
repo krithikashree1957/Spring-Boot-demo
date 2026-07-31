@@ -1,6 +1,36 @@
 # Spring Boot Demo Application
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/krithikashree1957/Spring-Boot-demo) [![Open in Replit](https://replit.com/badge/github/krithikashree1957/Spring-Boot-demo)](https://replit.com/github/krithikashree1957/Spring-Boot-demo) <a href="https://github.com/codespaces/new?repo=krithikashree1957/Spring-Boot-demo"><img src="https://github.com/codespaces/badge.svg" alt="Open in Codespaces" /></a>
+
 A beginner-friendly Spring Boot demo project built to learn how to create a REST API, connect it to PostgreSQL, run it through Docker, and debug common Spring/JPA issues in a practical way.
+
+## Interactive options
+
+These let you open the repository in an online environment so you can run and experiment with the app without installing everything locally.
+
+- Open in Gitpod — launches a full cloud workspace with a terminal: https://gitpod.io/#https://github.com/krithikashree1957/Spring-Boot-demo
+- Open in Replit — imports the repo into Replit so you can run commands in the browser: https://replit.com/github/krithikashree1957/Spring-Boot-demo
+- Open in GitHub Codespaces — opens the repo in a Codespace (requires a GitHub plan that includes Codespaces): https://github.com/codespaces/new?repo=krithikashree1957/Spring-Boot-demo
+
+<details>
+<summary>Quick interactive start (commands to run once your workspace opens)</summary>
+
+1. Start the database container in the workspace terminal:
+
+```bash
+docker compose up -d
+```
+
+2. Run the Spring Boot app (use the wrapper if available):
+
+```bash
+export JAVA_TOOL_OPTIONS="-Duser.timezone=UTC"
+./mvnw spring-boot:run
+```
+
+3. Visit http://localhost:8080/api/v1/software-engineers from the workspace preview or forward the port using the environment's port forwarding UI.
+
+</details>
 
 ## Project Overview
 
