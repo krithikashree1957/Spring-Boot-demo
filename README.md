@@ -102,19 +102,25 @@ This project went through several debugging corrections, including:
 
 ## Screenshots
 
-Click any link to view the full-size image in the repository.
+Below are embedded screenshots — click an image to open the full-size version.
 
-- [Screenshot 1 — List view — all engineers](src/1.png)
-- [Screenshot 2 — Detail view — single engineer](src/2.png)
-- [Screenshot 3 — Example POST request](src/3.png)
-- [Screenshot 4 — Docker / Postgres setup](src/4.png)
-- [Screenshot 5 — JPA entity mapping](src/5.png)
-- [Screenshot 6 — .http request examples](src/6.png)
-- [Screenshot 7 — Debug / console output](src/7.png)
+![Screenshot 1 — List view — all engineers](src/1.png)
+
+![Screenshot 2 — Detail view — single engineer](src/2.png)
+
+![Screenshot 3 — Example POST request](src/3.png)
+
+![Screenshot 4 — Docker / Postgres setup](src/4.png)
+
+![Screenshot 5 — JPA entity mapping](src/5.png)
+
+![Screenshot 6 — .http request examples](src/6.png)
+
+![Screenshot 7 — Debug / console output](src/7.png)
 
 ## Notes
 
-This repository was created as a learning/demo version to understand how Spring Boot applications are structured, how REST endpoints are exposed, how JPA entities are mapped, and how a PostgreSQL database is used in a real application workflow.
+This repository was created as a learning/demo version to understand how Spring Boot applications are structured, how REST endpoints are exposed, how JPA entities are mapped, and how a PostgreSQL[...]
 
 ## Author
 
