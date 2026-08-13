@@ -126,6 +126,6 @@ This repository was created as a learning/demo version to understand how Spring 
 
 👩‍💻 Author
 
-**Krithika Shree K**
+Krithika Shree K
 
 GitHub: [@krithikashree1957](https://github.com/krithikashree1957)
