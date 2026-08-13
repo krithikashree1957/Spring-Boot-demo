@@ -2,7 +2,7 @@
 
 A beginner-friendly Spring Boot demo project built to learn how to create a REST API, connect it to PostgreSQL, run it through Docker, and debug common Spring/JPA issues in a practical way.
 
-You can enter software engineer details into the application; when an ID is sent in a request (for example `GET /api/v1/software-engineers/{id}`), the REST endpoint will return the software engineer's ID and name.
+You can enter software engineer details into the application; when an ID is sent in a request (for example `GET /api/v1/software-engineers/{id}`), the REST endpoint will return the software enginee[...]
 
 ## Project Overview
 
@@ -126,5 +126,6 @@ This repository was created as a learning/demo version to understand how Spring 
 
 👩‍💻 Author
 
-Krithika Shree K
-GitHub: @krithikashree1957
+**Krithika Shree K**
+
+GitHub: [@krithikashree1957](https://github.com/krithikashree1957)
