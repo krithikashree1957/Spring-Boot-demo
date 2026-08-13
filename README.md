@@ -124,6 +124,7 @@ Below are embedded screenshots — click an image to open the full-size version.
 
 This repository was created as a learning/demo version to understand how Spring Boot applications are structured, how REST endpoints are exposed, how JPA entities are mapped, and how a PostgreSQL[...]
 
-## Author
+👩‍💻 Author
 
-Author: `krithikashree1957`
+Krithika Shree K
+GitHub: @krithikashree1957
